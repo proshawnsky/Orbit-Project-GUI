@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.sendCommandButton = new System.Windows.Forms.Button();
+            this.sendCommandText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +48,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.sendCommandButton);
+            this.groupBox1.Controls.Add(this.sendCommandText);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -67,21 +67,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Serial Communication";
             // 
-            // button3
+            // sendCommandButton
             // 
-            this.button3.Location = new System.Drawing.Point(177, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 34);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Send";
-            this.button3.UseVisualStyleBackColor = true;
+            this.sendCommandButton.Location = new System.Drawing.Point(177, 269);
+            this.sendCommandButton.Name = "sendCommandButton";
+            this.sendCommandButton.Size = new System.Drawing.Size(100, 34);
+            this.sendCommandButton.TabIndex = 11;
+            this.sendCommandButton.Text = "Send";
+            this.sendCommandButton.UseVisualStyleBackColor = true;
+            this.sendCommandButton.Click += new System.EventHandler(this.sendCommandButton_Click);
             // 
-            // textBox4
+            // sendCommandText
             // 
-            this.textBox4.Location = new System.Drawing.Point(19, 234);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 29);
-            this.textBox4.TabIndex = 10;
+            this.sendCommandText.Location = new System.Drawing.Point(19, 234);
+            this.sendCommandText.Name = "sendCommandText";
+            this.sendCommandText.Size = new System.Drawing.Size(258, 29);
+            this.sendCommandText.TabIndex = 10;
             // 
             // label3
             // 
@@ -165,11 +166,15 @@
             this.portDropdown.Size = new System.Drawing.Size(263, 32);
             this.portDropdown.TabIndex = 0;
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1901, 994);
+            this.ClientSize = new System.Drawing.Size(351, 375);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -191,8 +196,8 @@
         private System.Windows.Forms.ComboBox portDropdown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button sendCommandButton;
+        private System.Windows.Forms.TextBox sendCommandText;
         private System.IO.Ports.SerialPort serialPort1;
     }
 }
