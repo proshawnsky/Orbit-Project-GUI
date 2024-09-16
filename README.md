@@ -7,4 +7,4 @@ When you open that one file, the following 3 tabs should open in Visual Studio:
 2. Form1.cs [Design]
 3. Form1.Designer.cs
    
-Hit the green play button at the top. You should see the GUI window open. 
+With any one of these tabs as the active tab, hit the green play button at the top. You should see the GUI window open. 
